@@ -1,0 +1,85 @@
+
+# PHYSICS EQUATION CALCULATOR
+
+def speed():
+    distance = float(input("Enter distance (m): "))
+    time = float(input("Enter time (s): "))
+
+    if time == 0:
+        print("Time cannot be zero.")
+    else:
+        answer = distance / time
+        print("Speed =", answer, "m/s")
+
+
+def acceleration():
+    final_velocity = float(input("Enter final velocity (m/s): "))
+    initial_velocity = float(input("Enter initial velocity (m/s): "))
+    time = float(input("Enter time (s): "))
+
+    if time == 0:
+        print("Time cannot be zero.")
+    else:
+        answer = (final_velocity - initial_velocity) / time
+        print("Acceleration =", answer, "m/s²")
+
+
+def force():
+    mass = float(input("Enter mass (kg): "))
+    acceleration_value = float(input("Enter acceleration (m/s²): "))
+
+    answer = mass * acceleration_value
+    print("Force =", answer, "N")
+
+
+def kinetic_energy():
+    mass = float(input("Enter mass (kg): "))
+    velocity = float(input("Enter velocity (m/s): "))
+
+    answer = 0.5 * mass * velocity ** 2
+    print("Kinetic Energy =", answer, "J")
+
+
+def weight():
+    mass = float(input("Enter mass (kg): "))
+
+    answer = mass * 9.8
+    print("Weight =", answer, "N")
+
+
+# MAIN PROGRAM
+
+while True:
+
+    print("\n===== PHYSICS EQUATION MENU =====")
+    print("1. Speed")
+    print("2. Acceleration")
+    print("3. Force")
+    print("4. Kinetic Energy")
+    print("5. Weight")
+
+    choice = input("Choose an equation (1-5): ")
+
+    if choice == "1":
+        speed()
+
+    elif choice == "2":
+        acceleration()
+
+    elif choice == "3":
+        force()
+
+    elif choice == "4":
+        kinetic_energy()
+
+    elif choice == "5":
+        weight()
+
+    else:
+        print("Invalid choice!")
+
+    again = input("\nDo you want to continue? (yes/no): ")
+
+    if again.lower() != "yes":
+        print("Thank you for using the Physics Calculator!")
+        break
